@@ -1,5 +1,5 @@
 # drugs_inventory
 
 requirements:
-virtual env
+virtual env,
 Django-1.8.18 
