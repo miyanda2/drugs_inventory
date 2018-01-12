@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+    <!-- Meta Descriptions -->
+    <meta charset="utf-8"/>
+    <title>ATBU DRUG INVENTORY SYSTEM :: HOME</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="Abubakar Tafawa Balewa University" name="Drug details and complete stock keeping"/>
+    <meta content="ATBU Medical center" name="Godson C. Jnr"/>
+
+    <!-- css Files -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main-style.css' %}">
+
+    <!-- JS Files -->
+    <script type="text/javascript" src="{% static 'js/godson.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/react.js' %}"></script>
+	</head>
+
+  <body>
+    <div class="container-wrapper">
+      <div class="container">
+        <header>
+          <div class="navigation">
+            <nav>
+              <ol>
+                <!-- <li><a href="javascript:;">Home</a></li> -->
+              </ol>
+            </nav>
+          </div>
+
+          <!-- ===============Header Text==================== -->
+          <div class="carousel-centered">
+            <div class="top-text">
+              <h1 class="carousel-title">ATBU Drug Inventory</h1>
+              <p>Everything you need to know about the drugs in our lab. Ranging from Number of Drugs in stock down to drug request and also drug activities in the Medical Center.</p>
+            </div>
+
+          </div>
+        </header>
+
+        <section id="details">
+          <div class="content">
+            <div class="heading">
+              <h1>Avaliable Drugs!</h1>
+              <p>Trends in company stock prices before the first public announcement differ for companies that report positive vs negative trials. This finding has important legal and ethical implications for investigators, drug companies, and the investment industry.!</p>
+            </div>
+
+            <input type="search" class="light-table-filter search-input" data-table="order-table" autofocus placeholder="Search Drug Name, Quantity, Entery Date and also Expiry Date Here">
+          <table class="order-table table">
+            <thead>
+              <tr>
+                <th>S/N</th>
+                <th>Drug Name</th>
+                <th>Quantity</th>
+                <th>Entry Date</th>
+                <th>Expiry Date</th>
+              </tr>
+            </thead>
+            <tbody>
+{% for Drug in drugs %}
+
+              <tr>
+                <td>{{Drug.id}}</td>
+                <td>{{Drug.Drug_name}}</td>
+                <td>{{Drug.Quantity}}</td>
+                <td>{{Drug.entry_date}}</td>
+                <td>{{Drug.expire_date}}</td>
+              </tr>
+{% endfor %}
+
+            </tbody>
+          </table>
+
+        </section>
+
+          <!-- <div class="content id"></div> -->
+
+        <!-- ================FOOTER SECTION==================== -->
+    <section id="footer">
+      <div class="footer">
+        <div class="container">
+          <p class="copyright">Copyright &copy; 2017. ATBU Drug Inventory :: Designed by <a href="http://www.uplift.ng">Uplift Nigeria</a> All Right Reserved</p>
+      </div>
+    </section>
+      </div>
+    </div>
+  </body>
+</html>
